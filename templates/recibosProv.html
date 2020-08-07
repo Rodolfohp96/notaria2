@@ -1,0 +1,57 @@
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{url_for('static', filename='css/estilostablas.css')}}">
+
+<section>
+    
+    <article class="mat">
+        <h2 class="info__titulo">TOTAL RECIBOS: </h2>
+       <p class="info__txt">{{numrecibost}}</p>
+    </article>
+    <article class="mat">
+        <h2 class="info__titulo">TOTAL ANTICIPO: </h2>
+        <p class="info__txt">$ {{anticipot}}</p>
+    </article>
+    <article class="mat">
+        <h2 class="info__titulo">TOTAL AVALUO: </h2>
+        <p class="info__txt">$ {{avaluot}}</p>
+        <a href="/"><img src="/static/home.png" alt="" id="iniciopng" ></a>
+    </article>
+    
+</section>
+
+<table>
+
+    <thead>
+        <tr>
+            <td>Folio</td>
+            <td>Nombre</td>
+            <td>Anticipo</td>
+            <td>Concepto</td>
+            <td>Escritura</td>
+            <td>Avaluo</td>
+            <td>Fecha</td>
+            <td>Creador</td>
+            
+            <td>Operaciones</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for recibo in recibosProv %}
+        <tr>
+            <td>{{recibo.0}}</td>
+            <td>{{recibo.1}}</td>
+            <td>{{recibo.2}}</td>
+            <td>{{recibo.3}}</td>
+            <td>{{recibo.4}}</td>
+            <td>{{recibo.5}}</td>
+            <td>{{recibo.6}}</td>
+            <td>{{recibo.7}}</td>
+            <td>
+                <a href="/print/{{recibo.0}}">Ver</a>
+                <a href="/delete/{{recibo.0}}">Borrar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

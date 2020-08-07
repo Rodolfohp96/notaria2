@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Notaria 2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+{% block body %}
+
+<section>
+  <div class="wrapperbody">
+    <a href="/" id="alayout"><img src="/static/home.png " id="iniciopng"></a>
+      <form action="/add_recive" method="POST" id="contact-form">
+  <table>
+      <tr>
+          <td colspan="1"><p class="texto22">RECIBI <label for="your-name">DE</label> :</p></td>
+          <td colspan="2" class="tableleft"><input type="text" name="nombreSolicitante" id="formGen" minlength="3" placeholder="NOMBRE" required></td>
+          
+      </tr>
+      <tr>
+          <td><p class="texto22">LA <label for="email">CANTIDAD </label> DE $</p></td>
+          <td class="tableleft"><input type="text" name="cantidadRecibo" id="formGen" placeholder="INGRESE LA CANTIDAD" required></td>
+      </tr>
+      <tr>
+          <td><p class="texto22">POR <label for="email">CONCEPTO </label> DE :</p></td>
+          
+          <td class="tableleft"><textarea name="concepto" id="formGen" placeholder="CONCEPTO" class="expanding" required></textarea></td>
+      </tr>
+      <tr>
+          <td> <p class="texto22">ESCRITURA <label for="email">NUMERO </label> :</p></td>
+          <td class="tableleft"><input type="text" name="escrituraNum" id="formGen" placeholder="No. ESCRITURA" required></td>
+      </tr>
+      <tr>
+          <td><p class="texto22">VALOR <label for="email">OPERACION </label>(AVALUO) :</p></td>
+          <td class="tableleft"><input type="text" name="avaluo" id="formGen" placeholder="AVALUO" required></td>
+      </tr>
+      <tr>
+          <td><p class="texto22"><label for="email">FECHA </label> </p></td>
+          <td class="tableleft"> <input type="date" name="fechaRecibo" id="formGen" placeholder="FECHA" required></td>
+      </tr>
+      <tr>
+        <td colspan="1"><p class="texto22">ELABORO <label for="your-name"></label> :</p></td>
+        <td colspan="2" class="tableleft"><input type="text" name="nombreCreador" id="formGen" minlength="3" placeholder="NOMBRE" required></td>
+        
+    </tr>
+    <tr>
+      <td colspan="3"><input class="botonadd" type="submit" value="Agregar" id="botonalumno"></td>
+    </tr>
+      
+  </table>
+  
+<p>
+</p>
+</form>
+  </div>
+</section>     
+        
+    </body>
+    {% endblock %}
+</html>

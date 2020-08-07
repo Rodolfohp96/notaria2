@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Notaria 2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/cssrecibo.css')}}"" />
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        
+    </head>
+    <body>
+        <div class="row">
+          <div class="column"><div id="logo">
+            <img src="/static/logoNotaria.png" alt="" class="logo">
+        </div></div>
+          <div class="column"><p class="texto1">NOTARIA PUBLICA No. 2 </p>
+            <p class="texto1">DISTRITO JUDICIAL DE TULA</p>
+            <P class="texto2">LIC. CESAR VIEYRA SALGADO</P>
+            <p class="texto3">MATAMOROS No. 204, COL. BARRIO ALTO C.P. 42800 TEL. : (773) 73-2-01-99</p>
+            <p class="texto3">marcelavieyra@prodigy.net</p></div>
+          <div class="column"><div class="fol">   
+           <p class="texto2">Recibo provisional</p>
+            <section><p class="texto14">Folio</p></section>
+            <section><p class="texto15">{{recibo.0}}</p></section>
+        </div></div>
+        </div>
+    <section>
+        <div class="wrapperbody">
+            <form id="contact-form">
+        <table>
+            <tr>
+                <td colspan="1"><p class="textform">RECIBI <label for="your-name">DE</label> :</p></td>
+                <td colspan="2" class="tableleft"><p class="textformc"> {{recibo.1}} </p>
+            </tr>
+            <tr>
+                <td><p class="textform">LA <label for="email">CANTIDAD </label> DE $</p></td>
+                <td class="tableleft"><p class="textformc"> {{recibo.2}} </p></tr>
+            <tr>
+                <td><p class="textform">POR <label for="email">CONCEPTO </label> DE :</p></td>
+                
+                <td class="tableleft"><p class="textformc"> {{recibo.3}} </p></tr>
+            <tr>
+                <td> <p class="textform">ESCRITURA <label for="email">NUMERO </label> :</p></td>
+                <td class="tableleft"><p class="textformc"> {{recibo.4}} </p></tr>
+            <tr>
+                <td><p class="textform">VALOR <label for="email">OPERACION </label> (AVALUO) :</p></td>
+                <td class="tableleft"><p class="textformc"> {{recibo.5}} </p></tr>
+            <tr>
+                <td><p class="textform"><label for="email">FECHA </label> </p></td>
+                <td class="tableleft"> <p class="textformc"> {{recibo.6}} </p> </tr>
+            <tr>
+                <td colspan="2"><p><label for="your-message"><h6 id="footerfirm">(ESTE RECIBO SE CAMBIARA POR EL RECIBO DE HONORARIOS POSTERIORMENTE O CUANDO TRAIGAN SU R.F.C.)</h6></label> </p></td>
+            </tr>
+            <tr>
+                <td colspan="2"><P id="firma">__________________________</P></td>
+            </tr>
+            <tr>
+                <td colspan="2"><P id="firmanombre">LIC. CESAR VIEYRA SALGADO</P></td>
+            </tr>
+        </table>
+        
+  
+</form>
+        </div>
+    </section>     
+        
+    </body>
+</html>

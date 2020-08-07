@@ -1,0 +1,75 @@
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<p>{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Notaria 2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+{% block body %}
+<div class="row">
+    <div class="column"><div id="logo">
+      <img src="/static/logoNotaria.png" alt="" class="logo">
+  </div></div>
+    <div class="column"><p class="texto1">NOTARIA PUBLICA No. 2 </p>
+      <p class="texto1">DISTRITO JUDICIAL DE TULA</p>
+      <P class="texto2">LIC. CESAR VIEYRA SALGADO</P>
+      <p class="texto3">MATAMOROS No. 204, COL. BARRIO ALTO C.P. 42800 TEL. : (773) 73-2-01-99</p>
+      <p class="texto3">marcelavieyra@prodigy.net</p></div>
+    <div class="column"><div class="fol">   
+
+        <a href="/" id="alayout"><img src="/static/home.png " id="iniciopng"></a>
+  </div></div>
+  </div>
+
+<section>
+  <div class="wrapperbody">
+    
+    <section id="one" class="wrapper">
+        <div class="inner">
+            <div class="flex flex-3">
+                <article>
+                    <header>
+                        <h3 class="texto2">Recibo Provisional<br /></h3>
+                    </header>
+                    <footer>
+                        <a href="/reciboMenu" class="button special">Crear Recibo</a>
+                    </footer>
+                </article>
+                <article>
+                    <header>
+                        <h3 class="texto2">Recibos</h3>
+                    </header>
+                    <footer>
+                        <a href="/recibos_prov" class="button special" >Ver Recibo</a>
+                    </footer>
+                </article>
+                <article>
+                    <header>
+                        <h3 class="texto2">Busqueda</h3>
+                    </header>
+                    <footer>
+                        <a href="/tiposbusqueda" class="button special">Buscar</a>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </section>
+  </div>
+</section>     
+        
+    </body>
+    {% endblock %}
+</html>

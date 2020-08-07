@@ -1,0 +1,90 @@
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{url_for('static', filename='css/estilostablas.css')}}">
+
+
+<a href="/"><img src="/static/home.png" alt="" id="iniciopng" ></a>
+    
+<section>
+    <article class="mat">
+        <h2>Busqueda de</h2>
+        <p></p>
+    </article>
+    <article class="mat">
+        <h2>Numero de recibos:</h2>
+        <p></p>
+    </article>
+    <article class="mat"></article>
+</section>
+
+<table>
+
+    <thead>
+        <tr>
+            <td>Folio</td>
+            <td>Nombre</td>
+            <td> Concepto</td>
+            <td>No. Escritura</td>
+            <td>Fecha</td>
+            <td>Creador</td>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td><form action="/busquedaFol" method="POST">
+                <input type="text" name="queryFol" placeholder="Buscar recibo por folio" size="9" maxlength="100">
+            </form></td>
+            <td><form action="/busquedaName" method="POST">
+                <input type="text" name="queryName" placeholder="Buscar recibo por nombre" size="9" maxlength="100">
+            </form></td>
+            <td><form action="/busquedaConc" method="POST">
+                <input type="text" name="queryConc" placeholder="Buscar recibo por concepto" size="9" maxlength="100">
+            </form></td>
+            <td><form action="/busquedaEsc" method="POST">
+                <input type="text" name="queryEsc" placeholder="Buscar recibo por escritura" size="9" maxlength="100">
+            </form></td>
+            <td><form action="/busquedaFech" method="POST">
+                <input type="text" name="queryFe" placeholder="Buscar recibo por fecha" size="9" maxlength="100">
+            </form></td>
+            <td><form action="/busquedaCread" method="POST">
+                <input type="text" name="queryCr" placeholder="Buscar recibo por creador" size="9" maxlength="100">
+            </form></td>
+        </tr>
+    </tbody>
+</table>
+<table>
+
+    <thead>
+        <tr>
+            <td>Folio</td>
+            <td>Nombre</td>
+            <td>Anticipo</td>
+            <td>Concepto</td>
+            <td>Escritura</td>
+            <td>Avaluo</td>
+            <td>Fecha</td>
+            <td>Creador</td>
+            
+            <td>Operaciones</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for recibo in datos %}
+        <tr>
+            <td>{{recibo.0}}</td>
+            <td>{{recibo.1}}</td>
+            <td>{{recibo.2}}</td>
+            <td>{{recibo.3}}</td>
+            <td>{{recibo.4}}</td>
+            <td>{{recibo.5}}</td>
+            <td>{{recibo.6}}</td>
+            <td>{{recibo.7}}</td>
+            <td>
+                <a href="/print/{{recibo.0}}">Ver</a>
+                <a href="/delete/{{recibo.0}}">Borrar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
